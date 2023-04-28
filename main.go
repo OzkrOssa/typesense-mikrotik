@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"os"
 	"sync"
 	"time"
@@ -31,6 +32,7 @@ func main() {
 
 	c := cron.New()
 	c.AddFunc("0 0 */2 * *", mainJob)
+	log.Println("cron job is started")
 	c.Start()
 
 }
