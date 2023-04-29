@@ -1,0 +1,12 @@
+version: '3'
+services:
+    cron:
+        build: .
+        image: mikrotik-typesense-exporter
+        container_name: mktyex
+        restart: always
+        environment:
+            API: ${API}
+            PASSWORD: ${PASSWORD}
+            TYPESENSE_HOST: ${TYPESENSE_HOST}
+            TYPESENSE_API_KEY: ${TYPESENSE_API_KEY}
